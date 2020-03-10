@@ -1,40 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import "./login.css";
 
-function Login() {
+function Login(props) {
   const [credentials, setCredentials] = useState({
     email_address: "",
     password: ""
   });
 
+  let history = useHistory();
+
   // on submit fetch and find/set the id of the current user to redux
 
-  let url = `http://localhost:3000/login`
+  let url = `http://localhost:3000/login`;
 
-    let submitHandler = (e) => {
-      e.preventDefault();
+  let submitHandler = e => {
+    e.preventDefault();
 
-      fetch(`${url}`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(
-          credentials 
-        )
-      })
-        .then(resp => resp.json())
-        .then(data => {
-          if (data.errors) {
-            alert("Incorrect Username/password");
-          } else {
-            console.log("success")
-            // this.props.login(parseInt(data.data.id));
-          }
-        });
-    };
+    fetch(`${url}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        if (data.errors) {
+          alert("Incorrect Username/password");
+        } else {
+          console.log("success");
+          props.login(data);
+          history.push("/portfolio");
+        }
+      });
+  };
 
   return (
     <div className="login-container">
@@ -72,18 +75,18 @@ function Login() {
   );
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     login: id => {
-//       dispatch({ type: "LOGIN", payload: id });
-//     }
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    login: data => {
+      dispatch({ type: "LOGIN", payload: data });
+    }
+  };
+}
 
-// function mapStateToProps(state) {
-//   return {
-//     user_id: state.user_id
-//   };
-// }
-export default Login;
+function mapStateToProps(state) {
+  return {
+    user_id: state.userId
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 // export default connect(mapStateToProps, mapDispatchToProps)(Login);
