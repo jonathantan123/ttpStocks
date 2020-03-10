@@ -11675,3 +11675,729 @@ Completed 404 Not Found in 32ms (ActiveRecord: 2.7ms | Allocations: 600)
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=0):
   
 app/controllers/api/v1/users_controller.rb:13:in `show'
+Started POST "/login" for ::1 at 2020-03-10 12:43:10 -0400
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+Started POST "/login" for ::1 at 2020-03-10 12:43:11 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (171.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (171.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 585ms (Views: 5.6ms | ActiveRecord: 196.3ms | Allocations: 6603)
+
+
+Completed 200 OK in 950ms (Views: 0.8ms | ActiveRecord: 600.4ms | Allocations: 12009)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 12:43:37 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"4", "user_id"=>1}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:02:27 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (43.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 478ms (Views: 3.9ms | ActiveRecord: 99.1ms | Allocations: 8302)
+
+
+Started POST "/login" for ::1 at 2020-03-10 13:02:28 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (46.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 404ms (Views: 0.4ms | ActiveRecord: 46.1ms | Allocations: 788)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:02:34 -0400
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+... if(totalCost > userBalance ) { 
+...                              ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+            } 
+            ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:38: syntax error, unexpected '}', expecting end
+        }
+        ^):
+  
+app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:38: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:38: syntax error, unexpected '}', expecting end
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:02:58 -0400
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+... if(totalCost > userBalance ) { 
+...                              ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+            } 
+            ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:47: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:47: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/transactions_controller.rb:29: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:47: syntax error, unexpected end, expecting end-of-input
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:04:04 -0400
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+... if(totalCost > userBalance ) { 
+...                              ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+            } else (
+            ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started POST "/login" for ::1 at 2020-03-10 13:04:24 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 501ms (Views: 2.5ms | ActiveRecord: 31.6ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:04:30 -0400
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+... if(totalCost > userBalance ) { 
+...                              ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+            } else (
+            ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/transactions_controller.rb:30: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/api/v1/transactions_controller.rb:32: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/transactions_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:05:01 -0400
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected ':', expecting end
+                render json :{error: "you dont have enough...
+                            ^):
+  
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected ':', expecting end
+app/controllers/api/v1/transactions_controller.rb:31: syntax error, unexpected ':', expecting end
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:05:39 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"3", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"3", "user_id"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 39126ms (ActiveRecord: 19.6ms | Allocations: 3681823)
+
+
+  
+NameError (undefined local variable or method `to_f' for #<Api::V1::TransactionsController:0x00007fad4d14b9a8>
+Did you mean?  to_s
+               to_a):
+  
+app/controllers/api/v1/transactions_controller.rb:28:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:06:47 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 478ms (Views: 0.8ms | ActiveRecord: 12.9ms | Allocations: 8303)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:06:52 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"2", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"2", "user_id"=>1}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:07:28 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 385ms (Views: 0.5ms | ActiveRecord: 9.7ms | Allocations: 8170)
+
+
+Started POST "/login" for ::1 at 2020-03-10 13:07:32 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 325ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 804)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:07:36 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"4", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:08:10 -0400
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Started POST "/login" for ::1 at 2020-03-10 13:08:11 -0400
+Completed 200 OK in 441ms (Views: 0.8ms | ActiveRecord: 20.4ms | Allocations: 8659)
+
+
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 366ms (Views: 0.5ms | ActiveRecord: 9.4ms | Allocations: 6855)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:08:14 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:08:42 -0400
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 446ms (Views: 0.8ms | ActiveRecord: 10.4ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:08:45 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:11:45 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 496ms (Views: 1.8ms | ActiveRecord: 18.3ms | Allocations: 8307)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:11:51 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"2", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"2", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:12:51 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Started POST "/login" for ::1 at 2020-03-10 13:12:52 -0400
+Completed 200 OK in 472ms (Views: 2.6ms | ActiveRecord: 38.8ms | Allocations: 8836)
+
+
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 359ms (Views: 1.7ms | ActiveRecord: 1.3ms | Allocations: 881)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:12:57 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 10.8ms | Allocations: 7209)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'type' for Transaction.):
+  
+app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:13:43 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (42.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (106.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 1], ["price", "1235.55"], ["user_id", 1], ["created_at", "2020-03-10 17:13:43.555414"], ["updated_at", "2020-03-10 17:13:43.555414"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (112.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 204 No Content in 499ms (ActiveRecord: 276.9ms | Allocations: 14734)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-03-10 13:14:56 -0400
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 387ms (Views: 1.2ms | ActiveRecord: 11.9ms | Allocations: 8303)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:15:01 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"2", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"2", "user_id"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+Started POST "/login" for ::1 at 2020-03-10 13:17:56 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 375ms (Views: 1.9ms | ActiveRecord: 12.5ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:18:01 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"2", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"2", "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:38:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:38:in `create'
+  [1m[36mUser Update (16.6ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "2521.94"], ["updated_at", "2020-03-10 17:18:01.726606"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:38:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:38:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (41.0ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 2], ["price", "1239.03"], ["user_id", 1], ["created_at", "2020-03-10 17:18:01.780297"], ["updated_at", "2020-03-10 17:18:01.780297"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 204 No Content in 404ms (ActiveRecord: 72.2ms | Allocations: 14064)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/login" for ::1 at 2020-03-10 13:19:40 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 476ms (Views: 2.0ms | ActiveRecord: 42.1ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:19:45 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"3", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"3", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+Completed 200 OK in 219ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 1945)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:20:33 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"3", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"3", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (47.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (247.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stocker_api_development"[0m
+  [1m[35m (230.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stocker_api_test"[0m
+  [1m[35m (613.6ms)[0m  [1m[35mCREATE DATABASE "stocker_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (693.8ms)[0m  [1m[35mCREATE DATABASE "stocker_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (77.9ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "user_id" integer, "stocks" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "stocks" CASCADE[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" bigserial primary key, "ticker" character varying, "price" decimal(1000,2), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "transactions" CASCADE[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "ticker" character varying, "quantity" integer, "price" decimal(1000,2), "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "password_digest" character varying, "balance" decimal(1000,2) DEFAULT 5000.0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200306172024)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306170213),
+(20200306170246),
+(20200306170303);
+
+[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-10 17:20:57.801509"], ["updated_at", "2020-03-10 17:20:57.801509"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "215045a0a4d2d2e3aa18c16cb2e23d58a298dd03"], ["created_at", "2020-03-10 17:20:57.839486"], ["updated_at", "2020-03-10 17:20:57.839486"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "user_id" integer, "stocks" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "stocks" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" bigserial primary key, "ticker" character varying, "price" decimal(1000,2), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "transactions" CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "ticker" character varying, "quantity" integer, "price" decimal(1000,2), "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "password_digest" character varying, "balance" decimal(1000,2) DEFAULT 5000.0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (30.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200306172024)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306170213),
+(20200306170246),
+(20200306170303);
+
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-10 17:20:58.103465"], ["updated_at", "2020-03-10 17:20:58.103465"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-10 17:20:58.114607"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "215045a0a4d2d2e3aa18c16cb2e23d58a298dd03"], ["created_at", "2020-03-10 17:20:58.125196"], ["updated_at", "2020-03-10 17:20:58.125196"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jon"], ["email_address", "admin"], ["password_digest", "$2a$12$1YQ7B/2ibOnrRz8EI0rWS.8NUqNPbVN1U/GlP/v5MmOgafRMs6B5O"], ["created_at", "2020-03-10 17:20:58.624989"], ["updated_at", "2020-03-10 17:20:58.624989"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/login" for ::1 at 2020-03-10 13:27:05 -0400
+Started POST "/login" for ::1 at 2020-03-10 13:27:07 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  [1m[35m (19.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 383ms (Views: 1.3ms | ActiveRecord: 11.9ms | Allocations: 9002)
+
+
+Completed 200 OK in 700ms (Views: 0.9ms | ActiveRecord: 354.0ms | Allocations: 7000)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 13:27:18 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"3", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"3", "user_id"=>1}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (7.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "1295.21"], ["updated_at", "2020-03-10 17:27:19.228795"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+  [1m[36mTransaction Create (23.3ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 3], ["price", "1234.93"], ["user_id", 1], ["created_at", "2020-03-10 17:27:19.299776"], ["updated_at", "2020-03-10 17:27:19.299776"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+Started POST "/login" for ::1 at 2020-03-10 14:04:13 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (67.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 555ms (Views: 4.6ms | ActiveRecord: 145.9ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 14:04:25 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (34.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mUser Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mUser Update (44.6ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "71.46"], ["updated_at", "2020-03-10 18:04:26.316095"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+  [1m[36mTransaction Create (57.7ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 1], ["price", "1223.75"], ["user_id", 1], ["created_at", "2020-03-10 18:04:26.396383"], ["updated_at", "2020-03-10 18:04:26.396383"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:41:in `create'
+Completed 200 OK in 17763ms (Views: 3.5ms | ActiveRecord: 190.7ms | Allocations: 76467)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (354.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stocker_api_development"[0m
+  [1m[35m (232.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stocker_api_test"[0m
+  [1m[35m (610.7ms)[0m  [1m[35mCREATE DATABASE "stocker_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (431.5ms)[0m  [1m[35mCREATE DATABASE "stocker_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "user_id" integer, "stocks" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "stocks" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" bigserial primary key, "ticker" character varying, "price" decimal(1000,2), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "transactions" CASCADE[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "ticker" character varying, "quantity" integer, "price" decimal(1000,2), "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "password_digest" character varying, "balance" decimal(1000,2) DEFAULT 5000.0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200306172024)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306170213),
+(20200306170246),
+(20200306170303);
+
+[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-10 18:05:18.800631"], ["updated_at", "2020-03-10 18:05:18.800631"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "215045a0a4d2d2e3aa18c16cb2e23d58a298dd03"], ["created_at", "2020-03-10 18:05:18.831109"], ["updated_at", "2020-03-10 18:05:18.831109"]]
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "portfolios" CASCADE[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "user_id" integer, "stocks" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "stocks" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" bigserial primary key, "ticker" character varying, "price" decimal(1000,2), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "transactions" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "ticker" character varying, "quantity" integer, "price" decimal(1000,2), "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "password_digest" character varying, "balance" decimal(1000,2) DEFAULT 5000.0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200306172024)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306170213),
+(20200306170246),
+(20200306170303);
+
+[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-10 18:05:19.124558"], ["updated_at", "2020-03-10 18:05:19.124558"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-10 18:05:19.133267"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "215045a0a4d2d2e3aa18c16cb2e23d58a298dd03"], ["created_at", "2020-03-10 18:05:19.140785"], ["updated_at", "2020-03-10 18:05:19.140785"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jon"], ["email_address", "admin"], ["password_digest", "$2a$12$XfTkuLEuwLdpLs8Yo3q7D.LTW1cUQUElJSthCjO7Fh8Cr5Vriy//i"], ["created_at", "2020-03-10 18:05:19.570588"], ["updated_at", "2020-03-10 18:05:19.570588"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/login" for ::1 at 2020-03-10 14:05:50 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 388ms (Views: 0.8ms | ActiveRecord: 11.1ms | Allocations: 8302)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 14:05:55 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "3780.07"], ["updated_at", "2020-03-10 18:05:56.240279"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (3.6ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 1], ["price", "1219.93"], ["user_id", 1], ["created_at", "2020-03-10 18:05:56.309094"], ["updated_at", "2020-03-10 18:05:56.309094"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 200 OK in 454ms (Views: 0.3ms | ActiveRecord: 49.9ms | Allocations: 14143)
+
+
+Started POST "/login" for ::1 at 2020-03-10 14:07:19 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 343ms (Views: 3.6ms | ActiveRecord: 1.3ms | Allocations: 781)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-03-10 14:07:23 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 1.7ms | Allocations: 1740)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 14:07:49 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"AAPL", "quantity"=>"3", "user_id"=>1, "transaction"=>{"ticker"=>"AAPL", "quantity"=>"3", "user_id"=>1}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "2960.8"], ["updated_at", "2020-03-10 18:07:50.147922"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (1.1ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "AAPL"], ["quantity", 3], ["price", "273.09"], ["user_id", 1], ["created_at", "2020-03-10 18:07:50.156451"], ["updated_at", "2020-03-10 18:07:50.156451"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 200 OK in 217ms (Views: 0.9ms | ActiveRecord: 10.8ms | Allocations: 7406)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-03-10 14:07:56 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.6ms | Allocations: 1679)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-03-10 14:08:10 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 1.0ms | Allocations: 1695)
+
+
+Started POST "/login" for ::1 at 2020-03-10 14:08:19 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 325ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 764)
+
+
+Started POST "/login" for ::1 at 2020-03-10 14:08:54 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 394ms (Views: 3.7ms | ActiveRecord: 2.2ms | Allocations: 765)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 14:09:01 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "1737.97"], ["updated_at", "2020-03-10 18:09:01.503060"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 1], ["price", "1222.83"], ["user_id", 1], ["created_at", "2020-03-10 18:09:01.554162"], ["updated_at", "2020-03-10 18:09:01.554162"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 200 OK in 309ms (Views: 0.4ms | ActiveRecord: 46.1ms | Allocations: 7400)
+
+
+Started POST "/login" for ::1 at 2020-03-10 14:10:13 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"admin", "password"=>"[FILTERED]", "login"=>{"email_address"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 369ms (Views: 4.3ms | ActiveRecord: 1.3ms | Allocations: 764)
+
+
+Started POST "/api/v1/transactions" for ::1 at 2020-03-10 14:10:24 -0400
+Processing by Api::V1::TransactionsController#create as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"1", "user_id"=>1, "transaction"=>{"ticker"=>"googl", "quantity"=>"1", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email_address" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "511.84"], ["updated_at", "2020-03-10 18:10:24.970582"], ["id", 1]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:39:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "quantity", "price", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ticker", "GOOGL"], ["quantity", 1], ["price", "1226.13"], ["user_id", 1], ["created_at", "2020-03-10 18:10:25.023046"], ["updated_at", "2020-03-10 18:10:25.023046"]]
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/transactions_controller.rb:40:in `create'
+Completed 200 OK in 262ms (Views: 0.3ms | ActiveRecord: 45.2ms | Allocations: 7407)
+
+
+Started GET "/api/v1/users/1" for 127.0.0.1 at 2020-03-10 14:10:29 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.9ms | Allocations: 1961)
+
+
