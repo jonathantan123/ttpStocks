@@ -15,3 +15,206 @@ Started POST "/find" for ::1 at 2020-03-09 22:01:14 -0400
 Processing by FindController#find as JSON
   Parameters: {"ticker"=>"GOOGL", "quantity"=>"4", "find"=>{"ticker"=>"GOOGL", "quantity"=>"4"}}
   [1m[36mUser Load (50.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/find" for ::1 at 2020-03-09 22:37:38 -0400
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"GOOGL", "quantity"=>"4", "find"=>{"ticker"=>"GOOGL", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 22:40:00 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"GOOGL", "quantity"=>"4", "find"=>{"ticker"=>"GOOGL", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 22:40:56 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms | Allocations: 35838)
+
+
+  
+NoMethodError (undefined method `let' for #<FindController:0x00007fa2b5001a40>):
+  
+app/controllers/find_controller.rb:5:in `find'
+Started POST "/find" for ::1 at 2020-03-09 22:41:25 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 22:42:02 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"sdfsdfs", "quantity"=>"4", "find"=>{"ticker"=>"sdfsdfs", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 0.0ms | Allocations: 3727)
+
+
+  
+RestClient::NotFound (404 Not Found):
+  
+app/controllers/find_controller.rb:5:in `find'
+Started POST "/find" for ::1 at 2020-03-09 22:47:25 -0400
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/find_controller.rb:19: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/find_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+app/controllers/find_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+Started POST "/find" for ::1 at 2020-03-09 22:47:40 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"sdfsdfs", "quantity"=>"4", "find"=>{"ticker"=>"sdfsdfs", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 0.0ms | Allocations: 3725)
+
+
+  
+RestClient::NotFound (404 Not Found):
+  
+app/controllers/find_controller.rb:5:in `find'
+Started POST "/find" for ::1 at 2020-03-09 22:48:35 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"sdfsdfs", "quantity"=>"4", "find"=>{"ticker"=>"sdfsdfs", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 0.0ms | Allocations: 3731)
+
+
+  
+RestClient::NotFound (404 Not Found):
+  
+app/controllers/find_controller.rb:5:in `find'
+Started POST "/find" for ::1 at 2020-03-09 22:55:13 -0400
+  [1m[35m (102.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"sdfsdfs", "quantity"=>"4", "find"=>{"ticker"=>"sdfsdfs", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `hostname' for #<String:0x00007fde65001590>):
+  
+app/controllers/find_controller.rb:8:in `find'
+Started POST "/find" for ::1 at 2020-03-09 22:56:25 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1255)
+
+
+  
+NoMethodError (undefined method `hostname' for #<String:0x00007f97096f0700>):
+  
+app/controllers/find_controller.rb:8:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:00:36 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1592)
+
+
+  
+NameError (uninitialized constant FindController::HTTParty):
+  
+app/controllers/find_controller.rb:8:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:02:42 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 578)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to :80 (Connection refused - connect(2) for nil port 80)):
+  
+app/controllers/find_controller.rb:9:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:03:14 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 578)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to :80 (Connection refused - connect(2) for nil port 80)):
+  
+app/controllers/find_controller.rb:9:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:03:53 -0400
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to :80 (Connection refused - connect(2) for nil port 80)):
+  
+app/controllers/find_controller.rb:9:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:06:05 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 578)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to :80 (Connection refused - connect(2) for nil port 80)):
+  
+app/controllers/find_controller.rb:12:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:06:25 -0400
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+  
+Errno::ECONNREFUSED (Failed to open TCP connection to :80 (Connection refused - connect(2) for nil port 80)):
+  
+app/controllers/find_controller.rb:12:in `find'
+Started POST "/find" for ::1 at 2020-03-09 23:09:13 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:10:08 -0400
+  [1m[35m (43.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:10:46 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:11:55 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:12:13 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:13:25 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:13:50 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:14:43 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:15:38 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"sdsdadsad", "quantity"=>"4", "find"=>{"ticker"=>"sdsdadsad", "quantity"=>"4"}}
+Started POST "/find" for ::1 at 2020-03-09 23:17:15 -0400
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/find_controller.rb:13: syntax error, unexpected '{', expecting then or ';' or '\n'
+...se.body === "Unknown symbol") { 
+...                              ^
+/Users/jonathantan/Development/try/stocker-ttp/backend/app/controllers/find_controller.rb:15: syntax error, unexpected '}', expecting end
+        }  
+        ^):
+  
+app/controllers/find_controller.rb:13: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/find_controller.rb:15: syntax error, unexpected '}', expecting end
+app/controllers/find_controller.rb:13: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/find_controller.rb:15: syntax error, unexpected '}', expecting end
+Started POST "/find" for ::1 at 2020-03-09 23:19:23 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FindController#find as JSON
+  Parameters: {"ticker"=>"googl", "quantity"=>"4", "find"=>{"ticker"=>"googl", "quantity"=>"4"}}
