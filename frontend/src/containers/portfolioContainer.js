@@ -6,11 +6,7 @@ import {connect} from "react-redux"
 
 function PortfolioContainer(props) {
 
-  
-
-
-  
-
+  debugger
 
 
   return (

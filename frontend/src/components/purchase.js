@@ -1,46 +1,41 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
-
 
 function PurchaseForm(props) {
   const [transactionInfo, setTransactionInfo] = useState({
     ticker: "",
-    quantity: "", 
+    quantity: ""
   });
 
-
-  let user_id = props.user_id
-
+  let user_id = props.user_id;
 
   // on submit fetch and find/set the id of the current user to redux
 
-    let url = `http://localhost:3000/api/v1/transactions`
+  let url = `http://localhost:3000/api/v1/transactions`;
 
-    let submitHandler = (e) => {
-    
-        e.preventDefault();
-        
-        fetch(`${url}`, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(
-           {...transactionInfo, user_id: user_id}
-          )
-        })
-          .then(resp => resp.json())
-          .then(data => {
-            if (data.errors) {
-             console.log("working");
-            } else {
-              console.log("success")
-              // this.props.login(parseInt(data.data.id));
-            }
-          });
-      };
+  let submitHandler = e => {
+    e.preventDefault();
+
+
+    fetch(`${url}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ ...transactionInfo, user_id: user_id })
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        if (data.errors) {
+          console.log("working");
+        } else {
+          alert(data.message)
+          props.updateBalance(data.balance) 
+        }
+      });
+  };
 
   return (
     <div className="login-container">
@@ -77,18 +72,17 @@ function PurchaseForm(props) {
   );
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     login: id => {
-//       dispatch({ type: "LOGIN", payload: id });
-//     }
-//   };
-// }
-
 function mapStateToProps(state) {
   return {
     user_id: state.userId
   };
 }
-export default connect(mapStateToProps) (PurchaseForm);
+function mapDispatchToProps(dispatch) {
+  return {
+    updateBalance: data => {
+      dispatch({ type: "UPDATEBALANCE", payload: data });
+    }
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PurchaseForm);
 // export default connect(mapStateToProps, mapDispatchToProps)(Login);

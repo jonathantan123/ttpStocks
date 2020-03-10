@@ -10,7 +10,7 @@ class MainContainer extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
           <Route exact path="/portfolio" component={PortfolioContainer} />
           <Route exact path="/transactions" component={transactionsContainer} />
         </Switch>
@@ -18,6 +18,5 @@ class MainContainer extends React.Component {
     );
   }
 }
-
 
 export default MainContainer;
