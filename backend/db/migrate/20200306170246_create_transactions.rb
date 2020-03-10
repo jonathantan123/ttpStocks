@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.string :ticker
       t.integer :quantity
       t.decimal :price, :precision => 1000, :scale => 2
-      t.string :type
+      t.integer :user_id
       t.timestamps
     end
   end

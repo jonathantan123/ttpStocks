@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_172024) do
     t.string "ticker"
     t.integer "quantity"
     t.decimal "price", precision: 1000, scale: 2
-    t.string "type"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
