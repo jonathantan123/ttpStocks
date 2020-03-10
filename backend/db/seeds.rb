@@ -8,3 +8,4 @@
 # ahoussaoinfoiasnofa
 
 User.create(name: "jon", email_address: "admin", password_digest: BCrypt::Password.create('password'))
+Portfolio.create(user_id: 1)

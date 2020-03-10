@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_172024) do
   create_table "stocks", force: :cascade do |t|
     t.string "ticker"
     t.decimal "price", precision: 1000, scale: 2
+    t.integer "quantity"
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

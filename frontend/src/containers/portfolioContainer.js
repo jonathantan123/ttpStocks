@@ -6,8 +6,6 @@ import {connect} from "react-redux"
 
 function PortfolioContainer(props) {
 
-  debugger
-
 
   return (
     <div className="portfolio-container">

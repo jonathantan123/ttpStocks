@@ -27,6 +27,7 @@ class Api::V1::UsersController < ApplicationController
             )
         
         if user.save 
+            Portfolio.create(user_id: user.id)
             render json: user 
         else 
             render json: {errors: user.errors.full_messages}

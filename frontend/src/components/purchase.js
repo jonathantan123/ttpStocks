@@ -17,24 +17,32 @@ function PurchaseForm(props) {
   let submitHandler = e => {
     e.preventDefault();
 
+    let wholeIntegerCheck = /^[1-9]\d*$/;
 
-    fetch(`${url}`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ ...transactionInfo, user_id: user_id })
-    })
-      .then(resp => resp.json())
-      .then(data => {
-        if (data.errors) {
-          console.log("working");
-        } else {
-          alert(data.message)
-          props.updateBalance(data.balance) 
-        }
-      });
+    ////check whole integer with regex
+    if (wholeIntegerCheck.test(transactionInfo.quantity) === false) {
+      alert("Please enter a whole integer");
+    } else {
+      fetch(`${url}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ...transactionInfo, user_id: user_id })
+      })
+        .then(resp => resp.json())
+        .then(data => {
+          if (data.error) {
+            alert(data.error);
+          } else {
+            alert(data.message);
+            props.updateBalance(data.balance);
+          }
+        });
+    }
+    e.target.querySelector("input#ticker").value = "";
+    e.target.querySelector("input#quantity").value = "";
   };
 
   return (
@@ -50,7 +58,7 @@ function PurchaseForm(props) {
             placeholder="Ticker"
           />
           <Form.Field
-            id="password"
+            id="quantity"
             control={Input}
             onChange={e =>
               setTransactionInfo({
