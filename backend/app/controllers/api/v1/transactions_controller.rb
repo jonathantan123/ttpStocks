@@ -10,8 +10,7 @@ class Api::V1::TransactionsController < ApplicationController
 
     def create 
         ## first find the stock  
-        
-        puts "hi"
+    
         user = User.find(params[:user_id])
         
         query = params[:ticker].capitalize() 
@@ -22,11 +21,9 @@ class Api::V1::TransactionsController < ApplicationController
             render json: {error: "Invalid Ticker"}
         else
             json = JSON.parse response.body
-            
-            newTransaction = user.transactions.create(ticker: "#{json["symbol"]}", quantity: params[:quantity].to_i, price: "#{json["latestPrice"]}")
-          
-            puts "sucuess"
-        
+            newTransaction = user.transactions.create(ticker: "#{json["symbol"]}", quantity: params[:quantity].to_i, price: "#{json["latestPrice"]}", type: "BUY")
+         
+    
         end
     end  
 
