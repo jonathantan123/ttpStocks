@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_172024) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
+    t.string "email_address"
     t.string "password_digest"
     t.decimal "balance", precision: 1000, scale: 2, default: "5000.0"
     t.datetime "created_at", precision: 6, null: false
