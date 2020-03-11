@@ -8,13 +8,12 @@ function Transaction(props) {
   return (
       
     <List.Item>
-
       <List.Content>
         <List.Header>
         {props.data.ticker}
         </List.Header>
         {props.data.quantity} Shares 
-        @ ${props.data.price}.00/share 
+        @ ${props.data.price}/share 
       </List.Content>
     </List.Item>
   );

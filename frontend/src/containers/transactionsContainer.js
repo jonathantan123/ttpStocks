@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { List, Grid, Segment } from "semantic-ui-react";
-import PurchaseForm from "../components/purchase";
 import { connect } from "react-redux";
 import Transaction from "../components/transaction";
 
@@ -14,7 +13,7 @@ function TransactionsContainer(props) {
     fetch(`http://localhost:3001/api/v1/users/${id}`)
         .then(resp => resp.json())
         .then(resp=> {
-            setTransactions(resp)
+            setTransactions(resp.transactions)
         });
   }, [id])
 
@@ -31,7 +30,6 @@ let renderTransactions = (array) => {
         <Grid coumns={1} relaxed="very">
           <Grid.Column>
             <h2>My Transactions</h2>
-            <p>ajksdnkjasndasn</p>
             <List animated verticalAlign="middle" divided relaxed>
               {renderTransactions(transactions)}
             </List>

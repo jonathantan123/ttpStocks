@@ -29,6 +29,7 @@ class Api::V1::TransactionsController < ApplicationController
             ticker = json["symbol"]
             latestPrice = json["latestPrice"].to_f().round(2)
             totalCost = latestPrice * params[:quantity].to_i()
+            
    
             
             if(totalCost > userBalance )  
@@ -44,11 +45,11 @@ class Api::V1::TransactionsController < ApplicationController
                     foundStock.quantity += params[:quantity].to_i()
                     foundStock.price = latestPrice
                  else  
-                    newStock = Stock.create(ticker: "#{json["symbol"]}", price: "#{json["latestPrice"]}", quantity: params[:quantity].to_i(), color: "gray" )
+                    newStock = Stock.create(ticker: "#{json["symbol"]}", price: "#{json["latestPrice"]}", quantity: params[:quantity].to_i(), color: "gray")
                     portfolioStocks.push(newStock)
                  end 
 
-                 portfolio.update(stocks: portfolioStocks)
+                  portfolio.update(stocks: portfolioStocks)
             
                   user.update(balance: user.balance - totalCost )
                

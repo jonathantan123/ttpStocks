@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_172024) do
     t.decimal "price", precision: 1000, scale: 2
     t.integer "quantity"
     t.string "color"
+    t.decimal "total", precision: 1000, scale: 2, default: "0.0"
+    t.string "transactionType", default: "BUY"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

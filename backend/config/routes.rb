@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end 
     
       post '/login', to: 'login#login'
-      post '/find', to: 'find#find'
+      get '/find/:id', to: 'find#find'
       
     end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

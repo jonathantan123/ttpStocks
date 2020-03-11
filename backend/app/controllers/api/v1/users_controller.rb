@@ -13,8 +13,9 @@ class Api::V1::UsersController < ApplicationController
         user = User.find(params[:id])
         
         transactions = user.transactions
+        portfolioStocks = user.portfolio.stocks
 
-        render json: transactions
+        render json: {transactions: transactions, portfolioStocks: portfolioStocks}
     end 
 
 

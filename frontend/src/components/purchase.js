@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 
 function PurchaseForm(props) {
   const [transactionInfo, setTransactionInfo] = useState({
@@ -9,6 +11,7 @@ function PurchaseForm(props) {
   });
 
   let user_id = props.user_id;
+  let history = useHistory();
 
   // on submit fetch and find/set the id of the current user to redux
 
@@ -37,7 +40,8 @@ function PurchaseForm(props) {
             alert(data.error);
           } else {
             alert(data.message);
-            props.updateBalance(data.balance);
+            props.updateBalance(data.balance)
+            history.push("/transactions");
           }
         });
     }

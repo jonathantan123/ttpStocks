@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
 import "./login.css";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 
-function SignUp() {
+function SignUp(props) {
   const [credentials, setCredentials] = useState({
     name: "",
-    password: "", 
+    password: "",
     email_address: ""
   });
 
-  // on submit fetch and find/set the id of the current user to redux
+  let history = useHistory();
 
-    let submitHandler = (e) => {
-      e.preventDefault();
 
-      fetch(`http://localhost:3001/api/v1/users`, {
-            method: "POST", 
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(credentials)
-        })
-        .then(resp => resp.json())
-        .then((data) => {
-             
-            if(data.errors) {
-                alert(data.errors[0])
-            } else {
-               console.log("suceess")
-            }
-        })
+  let submitHandler = e => {
+    e.preventDefault();
 
-      
-     
-    };
+    fetch(`http://localhost:3001/api/v1/users`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        if (data.errors) {
+          alert(data.errors[0]);
+        } else {
+          props.login(data);
+          history.push("/portfolio");
+        }
+      });
+  };
 
   return (
     <div className="login-container">
@@ -81,18 +81,12 @@ function SignUp() {
   );
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     login: id => {
-//       dispatch({ type: "LOGIN", payload: id });
-//     }
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    login: data => {
+      dispatch({ type: "LOGIN", payload: data });
+    }
+  };
+}
 
-// function mapStateToProps(state) {
-//   return {
-//     user_id: state.user_id
-//   };
-// }
-export default SignUp;
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(SignUp);

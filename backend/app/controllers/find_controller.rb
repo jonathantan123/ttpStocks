@@ -4,22 +4,41 @@ class FindController < ApplicationController
 
 
     def find 
-        query = params[:ticker].capitalize() 
-        url = "https://cloud.iexapis.com/stable/stock/#{query}/quote?token=#{Rails.application.credentials[:apiKey]}&filter=companyName,symbol,latestPrice,previousClose"
 
+       portfolio =  Portfolio.find_by(user_id: params[:id])
+       portfolioStocks = portfolio.stocks 
+
+       portfolioStocks.map do |stock| 
+    
+        url = "https://cloud.iexapis.com/stable/stock/#{stock.ticker}/quote?token=#{Rails.application.credentials[:apiKey]}&filter=open,close,latestPrice,previousClose,iexRealtimePrice"
 
         response = HTTParty.get("#{url}")
+        
 
-        if (response.body === "Unknown symbol") 
-            render json: {error: "Invalid Ticker"}
-        else
-            json = JSON.parse response.body
-
+        json = JSON.parse response.body
+        
+        
+        
+         stock.price = json['latestPrice'].to_f().round(2)
+         stock.total = stock.price * stock.quantity
+       
             
-            debugger
-            puts "sucuess"
+           comparisionPrice =  json["open"] ? "open" : "previousClose"
+           
+
+            if (stock.price > json[comparisionPrice].to_f()) 
+                stock.color = "green"
+            elsif (json["latestPrice"].to_f() < json[comparisionPrice].to_f())
+                stock.color = "red"
+            else 
+                stock.color = "grey" 
+            end 
+
+
         end 
 
+
+        render json: portfolioStocks
         
        
 

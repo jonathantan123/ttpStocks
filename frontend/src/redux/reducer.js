@@ -13,7 +13,7 @@ const defaultState = {
         return { ...state, userId: action.payload.id, balance: action.payload.balance };
   
       case "UPDATEBALANCE":
-        debugger
+  
         return { ...state, balance: action.payload };
   
       // case "LOGOUT":
