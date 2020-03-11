@@ -1,6 +1,6 @@
 import React from "react";
 import {List } from "semantic-ui-react";
-//// time is set to EDT to localize to NYC
+//// time is set to EDT to localize to NYC 
 
 function Transaction(props) {
     
