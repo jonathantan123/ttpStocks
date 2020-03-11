@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Grid } from "semantic-ui-react";
+import { Form, Input, Grid, Segment } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./purchase.css";
@@ -14,6 +14,7 @@ function PurchaseForm(props) {
 
   let user_id = props.user_id;
   let history = useHistory();
+  const [loading, setLoading] = useState(false);
 
   // on submit fetch and find/set the id of the current user to redux
 
@@ -21,6 +22,7 @@ function PurchaseForm(props) {
 
   let submitHandler = e => {
     e.preventDefault();
+    setLoading(true)
 
     let wholeIntegerCheck = /^[1-9]\d*$/;
 
@@ -41,6 +43,7 @@ function PurchaseForm(props) {
           if (data.error) {
             alert(data.error);
           } else {
+            setLoading(false)
             alert(data.message);
             props.updateBalance(data.balance)
             history.push("/transactions");
@@ -52,8 +55,9 @@ function PurchaseForm(props) {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form">
+    <div class="container">
+      <div className="purchase-form">
+      <Segment loading={loading}>
         <Form onSubmit={submitHandler}>
           <Form.Field
             id="ticker"
@@ -81,6 +85,7 @@ function PurchaseForm(props) {
             </Grid.Row>
           </Grid>
         </Form>
+        </Segment>
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Divider, Grid, Segment, List} from "semantic-ui-react";
+import { Divider, Grid, Segment, List } from "semantic-ui-react";
 import PurchaseForm from "../components/purchase";
 import { connect } from "react-redux";
 import PortfolioStock from "../components/portfolioStock";
 
 function PortfolioContainer(props) {
   let id = props.user_id;
+
+  const [loading, setLoading] = useState(true);
 
   const [portfolioStocks, setPortfolioStocks] = useState([]);
 
@@ -14,6 +16,7 @@ function PortfolioContainer(props) {
       .then(resp => resp.json())
       .then(resp => {
         setPortfolioStocks(resp);
+        setLoading(false);
       });
   }, [id]);
 
@@ -22,21 +25,23 @@ function PortfolioContainer(props) {
   };
 
   return (
-    <div className="portfolio-container">
+    <div class="ui raised  padded  container segment">
       <Segment>
         <Grid columns={2} relaxed="very">
           <Grid.Column>
             <h2>Portfolio</h2>
-            <List animated verticalAlign="middle" divided relaxed>
-            {renderPortfolioStocks(portfolioStocks)}
-            </List>
+            <Segment loading={loading}>
+              <List animated verticalAlign="middle" divided relaxed>
+                {renderPortfolioStocks(portfolioStocks)}
+              </List>
+            </Segment>
           </Grid.Column>
           <Grid.Column>
             <h2>Cash ${props.balance} </h2>
             <PurchaseForm />
           </Grid.Column>
         </Grid>
-        <Divider>OR</Divider>
+        <Divider vertical>OR</Divider>
       </Segment>
     </div>
   );

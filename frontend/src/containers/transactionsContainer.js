@@ -7,32 +7,32 @@ function TransactionsContainer(props) {
   let id = props.user_id;
 
   const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      
     fetch(`http://localhost:3001/api/v1/users/${id}`)
-        .then(resp => resp.json())
-        .then(resp=> {
-            setTransactions(resp.transactions)
-        });
-  }, [id])
+      .then(resp => resp.json())
+      .then(resp => {
+        setTransactions(resp.transactions);
+        setLoading(false);
+      });
+  }, [id]);
 
-  
-
-let renderTransactions = (array) => {
-    return array.map((transaction) => <Transaction data={transaction}/>)
-  }
-
+  let renderTransactions = array => {
+    return array.map(transaction => <Transaction data={transaction} />);
+  };
 
   return (
-    <div className="portfolio-container">
+    <div class="ui raised  padded  container segment">
       <Segment>
         <Grid coumns={1} relaxed="very">
           <Grid.Column>
             <h2>My Transactions</h2>
-            <List animated verticalAlign="middle" divided relaxed>
-              {renderTransactions(transactions)}
-            </List>
+            <Segment loading={loading}>
+              <List animated verticalAlign="middle" divided relaxed>
+                {renderTransactions(transactions)}
+              </List>
+            </Segment>
           </Grid.Column>
         </Grid>
       </Segment>
