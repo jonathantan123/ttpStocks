@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Header } from "semantic-ui-react";
 
 import { connect } from "react-redux";
@@ -8,7 +8,6 @@ import "./landing.css";
 function Landing(props) {
   return (
     <div className="portfolio-container">
-     
       <div className="landing-container">
         <div className="welcome-text">
           <Header style={{ color: "white" }} as="h1">

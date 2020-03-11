@@ -1,7 +1,6 @@
 import React from "react";
 import {List } from "semantic-ui-react";
-
-import { connect } from "react-redux";
+//// time is set to EDT to localize to NYC
 
 function Transaction(props) {
     
@@ -13,7 +12,8 @@ function Transaction(props) {
         {props.data.ticker}
         </List.Header>
         {props.data.quantity} Shares 
-        @ ${props.data.price}/share 
+        @ ${props.data.price}/share
+        on {new Date (props.data.created_at).toLocaleString('en-US', {timeZone: "America/New_York"})} 
       </List.Content>
     </List.Item>
   );

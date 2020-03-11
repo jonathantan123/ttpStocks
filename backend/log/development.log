@@ -18404,3 +18404,163 @@ Processing by FindController#find as */*
 Completed 200 OK in 3021ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 7066)
 
 
+Started POST "/login" for ::1 at 2020-03-11 16:07:28 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]", "login"=>{"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jonathantan@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 418ms (Views: 3.2ms | ActiveRecord: 1.9ms | Allocations: 869)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:07:29 -0400
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Completed 200 OK in 1189ms (Views: 5.2ms | ActiveRecord: 1.2ms | Allocations: 7092)
+
+
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:07:34 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `show'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 27ms (Views: 9.2ms | ActiveRecord: 2.0ms | Allocations: 5672)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:08:16 -0400
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (1.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:08:18 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `show'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 45ms (Views: 16.6ms | ActiveRecord: 7.0ms | Allocations: 5808)
+
+
+Completed 200 OK in 3334ms (Views: 3.3ms | ActiveRecord: 1.5ms | Allocations: 15854)
+
+
+Started POST "/login" for ::1 at 2020-03-11 16:12:40 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]", "login"=>{"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jonathantan@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 349ms (Views: 2.6ms | ActiveRecord: 2.7ms | Allocations: 767)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:12:40 -0400
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (3.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:12:42 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:13:in `show'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `show'
+  [1m[36mTransaction Load (4.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:18:in `show'
+Completed 200 OK in 28ms (Views: 5.6ms | ActiveRecord: 7.0ms | Allocations: 5667)
+
+
+Completed 200 OK in 2002ms (Views: 1.9ms | ActiveRecord: 3.8ms | Allocations: 13800)
+
+
+Started POST "/login" for ::1 at 2020-03-11 16:23:54 -0400
+Started POST "/login" for ::1 at 2020-03-11 16:23:56 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]", "login"=>{"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (32.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jonathantan@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 445ms (Views: 4.2ms | ActiveRecord: 33.1ms | Allocations: 6748)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:23:57 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]", "login"=>{"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]"}}
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jonathantan@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+  [1m[36mPortfolio Load (3.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Completed 200 OK in 1776ms (Views: 0.5ms | ActiveRecord: 1378.1ms | Allocations: 14796)
+
+
+Completed 200 OK in 2990ms (Views: 1.9ms | ActiveRecord: 1797.4ms | Allocations: 21640)
+
+
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:24:14 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `show'
+  [1m[36mPortfolio Load (5.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `show'
+  [1m[36mTransaction Load (536.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 834ms (Views: 72.4ms | ActiveRecord: 570.7ms | Allocations: 10260)
+
+
+Started POST "/login" for ::1 at 2020-03-11 16:25:50 -0400
+Processing by LoginController#login as JSON
+  Parameters: {"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]", "login"=>{"email_address"=>"jonathantan@brandeis.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jonathantan@brandeis.edu"], ["LIMIT", 1]]
+  ↳ app/controllers/login_controller.rb:4:in `login'
+Completed 200 OK in 432ms (Views: 6.6ms | ActiveRecord: 4.8ms | Allocations: 771)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:25:51 -0400
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Completed 200 OK in 1114ms (Views: 6.4ms | ActiveRecord: 1.0ms | Allocations: 7065)
+
+
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:25:54 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `show'
+  [1m[36mPortfolio Load (1.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `show'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 332ms (Views: 7.1ms | ActiveRecord: 3.3ms | Allocations: 5048)
+
+
+Started GET "/find/2" for 127.0.0.1 at 2020-03-11 16:26:42 -0400
+Processing by FindController#find as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPortfolio Load (13.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/find_controller.rb:8:in `find'
+Completed 200 OK in 1237ms (Views: 3.7ms | ActiveRecord: 13.8ms | Allocations: 7057)
+
+
+Started GET "/api/v1/users/2" for 127.0.0.1 at 2020-03-11 16:26:48 -0400
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `show'
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:15:in `show'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:17:in `show'
+Completed 200 OK in 33ms (Views: 9.5ms | ActiveRecord: 3.4ms | Allocations: 5041)
+
+

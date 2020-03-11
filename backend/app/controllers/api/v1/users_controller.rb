@@ -1,12 +1,11 @@
 class Api::V1::UsersController < ApplicationController
 
     
-    def index 
-        debugger
-        users = User.all
-        render json: users
+    # def index 
+    #     users = User.all
+    #     render json: users
         
-    end 
+    # end 
 
 
     def show 
@@ -15,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
         transactions = user.transactions
         portfolioStocks = user.portfolio.stocks
 
-        render json: {transactions: transactions, portfolioStocks: portfolioStocks}
+        render json: {transactions: transactions}
     end 
 
 
