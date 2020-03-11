@@ -1,17 +1,26 @@
 .login-container { 
     display: flex;
-    justify-content: center;
- 
+    width: 100vw;
+    height: 100vh; 
+    align-items: center;
+}
+
+.image-container{ 
+    background-image: url("https://images.unsplash.com/photo-1556155092-8707de31f9c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80");
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+    background-position: center center;
+
 }
 
 .login-form{
     width: 50%;
-    height: 45vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: lightgray; 
-    opacity: 90%;;
-    border-style: groove;
+    padding-right: 12vw;
+ 
+ 
    }

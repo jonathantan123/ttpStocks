@@ -36,7 +36,7 @@ function PortfolioContainer(props) {
             <PurchaseForm />
           </Grid.Column>
         </Grid>
-        <Divider vertical>OR</Divider>
+        <Divider>OR</Divider>
       </Segment>
     </div>
   );

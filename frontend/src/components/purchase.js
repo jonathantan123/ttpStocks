@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import "./purchase.css";
+
 
 
 function PurchaseForm(props) {

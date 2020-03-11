@@ -1,0 +1,27 @@
+.signup-container { 
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh; 
+    align-items: center;
+}
+
+.signupImage-container{ 
+    background-image: url("https://images.unsplash.com/photo-1550115368-e1ff1a089465?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=647&q=80");
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+    background-position: center center;
+
+
+}
+
+.signup-form{
+    width: 50%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 12vw;
+    
+   }

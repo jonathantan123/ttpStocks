@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, Grid } from "semantic-ui-react";
-import "./login.css";
+import "./signup.css";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -37,8 +37,10 @@ function SignUp(props) {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form">
+    <div className="signup-container">
+        <div  className= "signupImage-container"></div>
+      <div className="signup-form">
+    
         <h3>Register</h3>
         <Form onSubmit={submitHandler}>
           <Form.Field

@@ -41,6 +41,7 @@ function Login(props) {
 
   return (
     <div className="login-container">
+      <div  className= "image-container"></div>
       <div className="login-form">
         <h3>Sign In</h3>
         <Form onSubmit={submitHandler}>
