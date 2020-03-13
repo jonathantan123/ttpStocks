@@ -12,7 +12,7 @@ function PortfolioContainer(props) {
   const [portfolioStocks, setPortfolioStocks] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/find/${id}`)
+    fetch(`https://ttp-stocker-api.herokuapp.com/find/${id}`)
       .then(resp => resp.json())
       .then(resp => {
         setPortfolioStocks(resp);

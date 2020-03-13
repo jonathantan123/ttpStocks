@@ -10,7 +10,7 @@ function TransactionsContainer(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/v1/users/${id}`)
+    fetch(`https://ttp-stocker-api.herokuapp.com/api/v1/users/${id}`)
       .then(resp => resp.json())
       .then(resp => {
         setTransactions(resp.transactions);

@@ -14,7 +14,7 @@ function Login(props) {
 
   // on submit fetch and find/set the id of the current user to redux
 
-  let url = `http://localhost:3000/login`;
+  let url = `https://ttp-stocker-api.herokuapp.com/login`;
 
   let submitHandler = e => {
     e.preventDefault();

@@ -17,7 +17,7 @@ function SignUp(props) {
   let submitHandler = e => {
     e.preventDefault();
 
-    fetch(`http://localhost:3001/api/v1/users`, {
+    fetch(`https://ttp-stocker-api.herokuapp.com/api/v1/users`, {
       method: "POST",
       headers: {
         Accept: "application/json",

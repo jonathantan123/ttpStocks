@@ -18,7 +18,7 @@ function PurchaseForm(props) {
 
   // on submit fetch and find/set the id of the current user to redux
 
-  let url = `http://localhost:3000/api/v1/transactions`;
+  let url = `https://ttp-stocker-api.herokuapp.com/api/v1/transactions`;
 
   let submitHandler = e => {
     e.preventDefault();
