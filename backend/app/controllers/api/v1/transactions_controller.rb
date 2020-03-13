@@ -37,12 +37,12 @@ class Api::V1::TransactionsController < ApplicationController
                     # foundStock.price = latestPrice
                  else  
                     ### otherwise, create a new stock and add it to the user's portfolio of stocks
-                    newStock = Stock.new(ticker: "#{json["symbol"]}", price: "#{json["latestPrice"]}", quantity: params[:quantity].to_i(), color: "gray")
+                    newStock = Stock.create(ticker: "#{json["symbol"]}", price: "#{json["latestPrice"]}", quantity: params[:quantity].to_i(), color: "gray")
                     portfolioStocks.push(newStock)
                  end 
                     ### Update user's portfolio and balance. Create a new transaction and send back to front end. 
 
-                    
+
                   portfolio.update(stocks: portfolioStocks)
                   user.update(balance: user.balance - totalCost )
                   newTransaction = user.transactions.create(ticker: "#{json["symbol"]}", quantity: params[:quantity].to_i, price: "#{json["latestPrice"]}")
