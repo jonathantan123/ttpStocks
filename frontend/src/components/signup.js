@@ -12,7 +12,7 @@ function SignUp(props) {
   });
 
   let history = useHistory();
-  let url = "http://localhost:3000/api/v1/users"
+  let url = "https://ttp-stocker-api.herokuapp.com/api/v1/users"
 
   let submitHandler = e => {
     e.preventDefault();
