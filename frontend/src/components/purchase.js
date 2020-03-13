@@ -26,7 +26,7 @@ function PurchaseForm(props) {
 
     let wholeIntegerCheck = /^[1-9]\d*$/;
 
-    ////check whole integer with regex
+    ////check to see if number enter is whole integer 
     if (wholeIntegerCheck.test(transactionInfo.quantity) === false) {
       alert("Please enter a whole integer");
     } else {
@@ -56,7 +56,7 @@ function PurchaseForm(props) {
 
   return (
     <div class="container">
-      <div className="purchase-form">
+      <div>
       <Segment loading={loading}>
         <Form onSubmit={submitHandler}>
           <Form.Field
@@ -104,4 +104,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PurchaseForm);
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
+

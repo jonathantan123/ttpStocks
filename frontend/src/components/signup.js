@@ -12,12 +12,12 @@ function SignUp(props) {
   });
 
   let history = useHistory();
-
+  let url = "https://ttp-stocker-api.herokuapp.com/api/v1/users"
 
   let submitHandler = e => {
     e.preventDefault();
 
-    fetch(`https://ttp-stocker-api.herokuapp.com/api/v1/users`, {
+    fetch(`${url}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -38,9 +38,8 @@ function SignUp(props) {
 
   return (
     <div className="signup-container">
-        <div  className= "signupImage-container"></div>
+      <div className="signupImage-container"></div>
       <div className="signup-form">
-    
         <h3>Register</h3>
         <Form onSubmit={submitHandler}>
           <Form.Field

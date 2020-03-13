@@ -1,8 +1,6 @@
 import React from "react";
 import { Header } from "semantic-ui-react";
-
 import { connect } from "react-redux";
-
 import "./landing.css";
 
 function Landing(props) {

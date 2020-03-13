@@ -14,7 +14,7 @@ function MainContainer(props) {
         <Route exact path="/" component={landing} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
-  
+
         {props.user_id !== 0 ? (
           <React.Fragment>
             <Route exact path="/portfolio" component={PortfolioContainer} />
